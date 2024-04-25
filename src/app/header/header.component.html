@@ -1,0 +1,23 @@
+<div class="header">
+  <div class="container">
+    <nav class="header_container">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/notes">
+          <mat-icon>create</mat-icon>
+          <span>Заметки</span>
+        </button>
+        <button mat-menu-item routerLink="/reminders">
+          <mat-icon>notifications</mat-icon>
+          <span>Напоминания</span>
+        </button>
+        <button mat-menu-item  routerLink="/tags">
+          <mat-icon>labelImportant</mat-icon>
+          <span>Теги</span>
+        </button>
+      </mat-menu>
+    </nav>
+  </div>
+</div>

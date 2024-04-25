@@ -1,0 +1,54 @@
+<section class="page">
+  <h1 class="page__title">ЗАМЕТКИ</h1>
+  <div class="page__button">
+    <button *ngIf="closeCreateNotes" mat-flat-button class="button" (click)="open()">Создать заметку</button>
+    <button *ngIf="!closeCreateNotes" mat-flat-button class="button" (click)="close()">Отмена</button>
+    <mat-card *ngIf="createNotes">
+      <mat-card-header>
+        <mat-card-title>Создание заметки</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <form class="form">
+          <mat-form-field class="full-width">
+            <mat-label>Заголовок</mat-label>
+            <input matInput
+              type="text"
+              [(ngModel)]="name"
+              [ngModelOptions]="{standalone: true}"
+              required>
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-label>Текст</mat-label>
+            <textarea matInput
+              type="text"
+              [(ngModel)]="description"
+              [ngModelOptions]="{standalone: true}"
+              required
+            ></textarea>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <p *ngIf="!name || !description" class="warning">Для создания заметки заполните все поля</p>
+        <button mat-button *ngIf="name && description" (click)="addNotes()">Создать</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="page__notes">
+    <div class="notes-container">
+      <mat-card class="card" *ngFor="let card of cardList">
+        <mat-card-header>
+          <mat-card-title>{{card.name}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{card.description}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="openDialog(card.id)">Редактировать</button>
+          <button mat-button (click)="deleteNotes(card.id)">Удалить</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</section>

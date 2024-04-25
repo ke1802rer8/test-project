@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Редактирование</h2>
+<mat-dialog-content>
+  <form class="form">
+    <mat-form-field class="form-full-width">
+      <mat-label>Заголовок</mat-label>
+      <input matInput type="text" [(ngModel)]="data.name" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+    <mat-form-field class="form-full-width">
+      <mat-label>Текст</mat-label>
+      <textarea matInput type="text" [(ngModel)]="data.description" [ngModelOptions]="{standalone: true}"></textarea>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="close()">Отмена</button>
+  <button mat-button *ngIf="data.name && data.description" [mat-dialog-close]="data" cdkFocusInitial>Сохранить</button>
+</mat-dialog-actions>

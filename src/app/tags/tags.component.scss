@@ -1,0 +1,35 @@
+.list-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list-section__lf {
+  padding-left: 5px;
+  margin: 0;
+}
+
+.button, .card {
+  margin-bottom: 25px;
+
+}
+
+.page__button {
+  right: 0;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.form {
+  display: block;
+  padding-top: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.warning {
+  color: red;
+  font-size: 13px;
+  margin-left: 10px;
+}

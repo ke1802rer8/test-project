@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  background-color: rgb(84, 170, 240);
+  border: black;
+
+}
+
+.header_container {
+  margin: 15px 0;
+}
+
+@media(max-width: 380px) {
+  .header_container {
+    margin: 10px 0;
+  }
+}
